@@ -1,6 +1,6 @@
 <ul>
   <li><a class="active" href="/">Home</a></li>
-  <li><%= link_to 'My Playlist', player_playlists_path %>My Playlists</li>
+  <li><%= link_to 'My Playlists', player_playlists_path %>My Playlists</li>
 </ul>
 <p id="notice"><%= notice %></p>
 
@@ -22,7 +22,7 @@
         <tr>
           <td><%= song.name %><td> by <%= song.artist_name %></td></td>
           <td><iframe src="https://embed.spotify.com/?uri=<%=song.spotify_uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></td>
-          <td><%= link_to 'Destroy', player_playlist_song_path(song.playlist.player.id, song.playlist.id, song), id: "destroy#{song.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', player_playlist_song_path(song.playlist.player.id, song.playlist.id, song), id: "destroy#{song.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

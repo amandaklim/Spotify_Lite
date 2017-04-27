@@ -1,6 +1,6 @@
 <ul>
   <li><a class="active" href="/">Home</a></li>
-  <li><%= link_to 'My Playlist', player_playlists_path %>My Playlists</li>
+  <li><%= link_to 'My Playlists', player_playlists_path %>My Playlists</li>
 </ul>
 <p id="notice"><%= notice %></p>
 
@@ -18,9 +18,9 @@
     <% @playlists.each do |playlist| %>
       <tr>
         <td><%= playlist.name %></td>
-        <td><%= link_to 'Show', player_playlist_path(playlist.player.id, playlist), id: "show#{playlist.id}"%></td>
+        <td><%= link_to 'Show', player_playlist_path(playlist.player.id, playlist), id: "sshow#{playlist.id}"%></td>
         <td><%= link_to 'Edit', edit_player_playlist_path(playlist.player.id, playlist) %></td>
-        <td><%= link_to 'Destroy', player_playlist_path(playlist.player.id, playlist), id: "destroy#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', player_playlist_path(playlist.player.id, playlist), id: "destroy#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

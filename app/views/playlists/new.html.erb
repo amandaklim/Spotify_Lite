@@ -1,9 +1,15 @@
 <ul>
   <li><a class="active" href="/">Home</a></li>
-  <li><%= link_to 'My Playlist', player_playlists_path %>My Playlists</li>
+  <li><%= link_to 'My Playlists', player_playlists_path %>My Playlists</li>
 </ul>
-<h1>New Playlist</h1>
+<div>
+	<br><p id="notice"><%= notice %></p>
 
-<%= render 'form' %>
+	<h1>New Playlist</h1>
+	
+	<%= render 'form' %>
 
+	<footer>
 <%= link_to 'Back', player_playlists_path %>
+</footer>
+</div>
