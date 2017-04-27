@@ -4,6 +4,13 @@ class SongsController < ApplicationController
   # GET /songs
   def index
     @songs = Song.where(playlist_id: params[:playlist_id]) 
+    @song_artist_name = @songs[0].name unless @songs.empty?
+    @song_artist_name = '' if @songs.empty?
+    @artist = RSpotify::Artist.search(@song_artist_name).first unless @songs.empty?
+    artist_tracks = @artist.top_tracks('US')[0].id unless @songs.empty?
+    recommendations = RSpotify::Recommendations.generate(limit: 21, seed_tracks:[artist_tracks], seed_artists: [@artist.id]) unless @songs.empty?
+    @r_tracks = recommendations.tracks unless @songs.empty?
+    @r_tracks = [] if @songs.empty?
   end
 
   # GET /songs/1
