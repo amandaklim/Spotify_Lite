@@ -1,0 +1,28 @@
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/players/<%=@playerid%>">My Playlists</a></li>
+</ul>
+<div>
+<h1>Welcome</h1>
+	
+	
+
+	<p>
+		
+		<strong>Your Current Top Tracks:</strong>
+		<p></p>
+		<div id="multiColumn">
+			
+				<% @tracks.each do |track| %>
+					<h3><%=track.name%>
+						<iframe src="https://embed.spotify.com/?uri=<%=track.uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+					</h3>
+				
+				<% end %>
+			
+		</div>
+	</p>
+	<footer>
+	   
+	</footer>
+</div>

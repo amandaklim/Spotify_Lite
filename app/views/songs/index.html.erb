@@ -1,0 +1,36 @@
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><%= link_to 'My Playlist', player_playlists_path %>My Playlists</li>
+</ul>
+<p id="notice"><%= notice %></p>
+
+<h1>Songs</h1>
+<div><%= link_to 'New Song', new_player_playlist_song_path %></div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @songs.each do |song| %>
+        <tr>
+          <td><%= song.name %><td> by <%= song.artist_name %></td></td>
+          <td><iframe src="https://embed.spotify.com/?uri=<%=song.spotify_uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></td>
+          <td><%= link_to 'Destroy', player_playlist_song_path(song.playlist.player.id, song.playlist.id, song), id: "destroy#{song.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <footer>
+    <%= link_to 'Show Playlists', player_playlists_path %>
+  </footer>
+</div>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @player.email %>
+</p>
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
+<div>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @player.email %>
+	</p></br>
+
+	<p>
+		<%= link_to 'New Playlist', new_player_playlist_path(@player.id) %><br>
+	</p><br>
+
+	<p>
+		<strong>Playlists:</strong></br>
+		
+			<ol>
+				<% @player.playlists.each do |playlist| %>
+					<h3><%=playlist.name%></h3>
+					<td><%= link_to 'Show', player_playlist_path(playlist.player.id, playlist), id: "show#{playlist.id}"%></td>
+          <td><%= link_to 'Destroy', player_playlist_path(playlist.player.id, playlist), id: "destroy#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr></br>
+				<% end %>
+			</ol>
+		
+	</p><br>
+
+	<footer>
+		<%= link_to 'Back', players_path %>
+	</footer>
+</div>
