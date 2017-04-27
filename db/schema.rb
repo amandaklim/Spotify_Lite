@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 20170426234159) do
 
   create_table "players", force: :cascade do |t|
     t.string   "email"
+    t.string   "r_artist"
+    t.string   "r_track"
+    t.string   "r_genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

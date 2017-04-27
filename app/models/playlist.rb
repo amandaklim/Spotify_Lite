@@ -3,14 +3,14 @@ class Playlist < ActiveRecord::Base
   has_many :songs, class_name: 'Song', dependent: :destroy
   validates :name, presence: true, uniqueness: :true
 
-    def add_player(playlist_params)
+  def add_player(playlist_params)
     playerid = playlist_params[:player_id]
     self.player = player_to_add
     self.player.playlist.append(self) unless self.player.playlist.include? self
     save
   end
 
-    def add_song(playlist_params)
+  def add_song(playlist_params)
     song_fields = playlist_params[:song_attributes]
     new_song = Song.new(song_fields)
     new_song.playlist = self

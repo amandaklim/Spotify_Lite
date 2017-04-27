@@ -1,8 +1,9 @@
 SpotifyJukebox::Application.routes.draw do
   resources :players do 
-  	resources :playlists do
-  		resources :songs
-  	end
+    resources :recommendations
+    resources :playlists do
+      resources :songs
+    end
   end
   root 'welcome#index'
   resources :artists

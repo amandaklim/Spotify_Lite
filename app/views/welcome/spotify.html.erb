@@ -1,10 +1,14 @@
 <ul>
   <li><a class="active" href="/">Home</a></li>
   <li><a href="/players/<%=@playerid%>">My Playlists</a></li>
+  <li><a href="https://www.spotify.com/us/account/overview/">My Account</a></li>
 </ul>
 <div>
 <h1>Welcome</h1>
-	
+			<br>
+<br>
+	<br>
+<br>
 	
 
 	<p>
@@ -14,6 +18,25 @@
 		<div id="multiColumn">
 			
 				<% @tracks.each do |track| %>
+					<h3><%=track.name%>
+						<iframe src="https://embed.spotify.com/?uri=<%=track.uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+					</h3>
+				
+				<% end %>
+			
+		</div>
+	</p>
+
+	<p>
+		<br>
+<br>
+	<br>
+<br>
+		<strong>Your Recommendations:</strong>
+		<p></p>
+		<div id="multiColumn">
+			
+				<% @r_tracks.each do |track| %>
 					<h3><%=track.name%>
 						<iframe src="https://embed.spotify.com/?uri=<%=track.uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 					</h3>
