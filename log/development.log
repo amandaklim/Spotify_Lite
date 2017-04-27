@@ -32975,3 +32975,1617 @@ Processing by PlaylistsController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered playlists/index.html.erb within layouts/application (5.7ms)
 Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 08:56:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 270ms (Views: 260.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:56:03 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:56:03 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQDMvoJMAJA5m_QFB2EmjPWf2mQqWLQiRu9ybI-5SWaC8wvAyXkczv6EClZ-EPhDbDBnNTM4Ta0u1bELvLrEgUnnKawoSOV9W3q7x0Pt6pflexq64NoWoSxY1qLLgd009Ok1HtfxsrosuPWJtezXSdQMxeVCyW7m86PsRM-y2Ekq9Ww-EEX1I_g2hyAmitrDaKBkpVjZjUl6ko5ddQ7H-9oKWQwcuFvzrjli2l2n2mGRSRAWIHu-LdYelwnQi4shxq_S7S3UN4NQ63OJmS9RXD2HWktncM4cmpRJib0fETCn_pX8dSs_oUKDgWkRcduhPUFv_IKDAY_90NYNdGgdVWlc2QkqCjzlEWNzKpYtv7_P9MpE&state=b6a16247d046bd0e11ded5318801291a28412eee81e2dd45" for ::1 at 2017-04-27 08:56:04 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQDMvoJMAJA5m_QFB2EmjPWf2mQqWLQiRu9ybI-5SWaC8wvAyXkczv6EClZ-EPhDbDBnNTM4Ta0u1bELvLrEgUnnKawoSOV9W3q7x0Pt6pflexq64NoWoSxY1qLLgd009Ok1HtfxsrosuPWJtezXSdQMxeVCyW7m86PsRM-y2Ekq9Ww-EEX1I_g2hyAmitrDaKBkpVjZjUl6ko5ddQ7H-9oKWQwcuFvzrjli2l2n2mGRSRAWIHu-LdYelwnQi4shxq_S7S3UN4NQ63OJmS9RXD2HWktncM4cmpRJib0fETCn_pX8dSs_oUKDgWkRcduhPUFv_IKDAY_90NYNdGgdVWlc2QkqCjzlEWNzKpYtv7_P9MpE", "state"=>"b6a16247d046bd0e11ded5318801291a28412eee81e2dd45"}
+  [1m[35mPlayer Exists (0.2ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "amandaklim@yahoo.com"]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "amandaklim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3300ms (Views: 33.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/players/1" for ::1 at 2017-04-27 08:56:23 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://localhost:3000/players/1/playlists
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/1/playlists" for ::1 at 2017-04-27 08:56:23 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"1"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 1]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered playlists/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 75ms (Views: 67.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/players/1/playlists/1" for ::1 at 2017-04-27 08:56:24 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"1", "id"=>"1"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/players/1/playlists/1/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/1/playlists/1/songs" for ::1 at 2017-04-27 08:56:24 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"1", "playlist_id"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 1]]
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/index.html.erb within layouts/application (881.4ms)
+Completed 200 OK in 1851ms (Views: 924.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 08:56:59 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:57:01 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:57:01 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQAwe_S803_BpZKm_6GfGYOOgBEIsgsWNgpLGCt6TLAtK57LlFvEL2pfN7kZ0SKG5oRdORRFE_hFgzpn8rqqvy7n_1_BuyXP_DY0PQ1iDz0C_sbkzEvA3CMA9X8U4VYuTc_NNkFLozdMKXsl0iC-2fff5DE7mo-vrX6RfZG_b8pdej2t0IQs7vyN9ygA9IaqjIXz992RbOqVLLSzK6qnoXlz-otaYkslc9P8QAMi5W44Rz4v50mK-MvX73ZSsR2ouerdShjROgvnh-sUR8Ie_wWigl75C1IXeb6BBAdWpfupDeMH_Ke9kozmM9qsd6VKUhzApVWQNp-9hYQoCeeTOxupXuJE0X0U-0ENnLCxAzi8m2Gp&state=556d12cef62111cc9a1d77cc2975cfc40cd0add620e0e991" for ::1 at 2017-04-27 08:57:01 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQAwe_S803_BpZKm_6GfGYOOgBEIsgsWNgpLGCt6TLAtK57LlFvEL2pfN7kZ0SKG5oRdORRFE_hFgzpn8rqqvy7n_1_BuyXP_DY0PQ1iDz0C_sbkzEvA3CMA9X8U4VYuTc_NNkFLozdMKXsl0iC-2fff5DE7mo-vrX6RfZG_b8pdej2t0IQs7vyN9ygA9IaqjIXz992RbOqVLLSzK6qnoXlz-otaYkslc9P8QAMi5W44Rz4v50mK-MvX73ZSsR2ouerdShjROgvnh-sUR8Ie_wWigl75C1IXeb6BBAdWpfupDeMH_Ke9kozmM9qsd6VKUhzApVWQNp-9hYQoCeeTOxupXuJE0X0U-0ENnLCxAzi8m2Gp", "state"=>"556d12cef62111cc9a1d77cc2975cfc40cd0add620e0e991"}
+  [1m[36mPlayer Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "amandaklim@yahoo.com"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "amandaklim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 993ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 08:57:44 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:57:46 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:57:46 -0400
+
+
+Started GET "/" for ::1 at 2017-04-27 08:58:37 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:58:39 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 08:58:39 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQDDFizjck6lvKCR1sT5R9PZ8FhOxZ9PtF-AirdlqhDLe_kshQ8vBOEkGmVA0qx657djWMLW5xJYH0yUaj3s84yJFWBEm1NDZ9Q-NStwVfjMNkPm0-VQMQgkXsqVMdZtElze8AVk_vY1EclP8_9xEyINRigtz-km69qj9AxVAMlXCR0BSyRFVInhrlrdqggLKPLmtOcgEM_os9rXhZhRDAYgiGLlti3HLGqO50wIQfWYYifpv11J76L8RwKJR_qReEo0vylSS1gD3XozdkjwPKranLEmXkmsI1y8zYOGcb9uuXwoAffeO5o8RG02Jv61OKgTGHlwoSG2DjwxFDKB7XNpNJYi7oHSWrIwNO_8rDJBJevM&state=d801c506e8867501c5b6e5a8cb03b8856bd4d1bf12649467" for ::1 at 2017-04-27 08:58:54 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQDDFizjck6lvKCR1sT5R9PZ8FhOxZ9PtF-AirdlqhDLe_kshQ8vBOEkGmVA0qx657djWMLW5xJYH0yUaj3s84yJFWBEm1NDZ9Q-NStwVfjMNkPm0-VQMQgkXsqVMdZtElze8AVk_vY1EclP8_9xEyINRigtz-km69qj9AxVAMlXCR0BSyRFVInhrlrdqggLKPLmtOcgEM_os9rXhZhRDAYgiGLlti3HLGqO50wIQfWYYifpv11J76L8RwKJR_qReEo0vylSS1gD3XozdkjwPKranLEmXkmsI1y8zYOGcb9uuXwoAffeO5o8RG02Jv61OKgTGHlwoSG2DjwxFDKB7XNpNJYi7oHSWrIwNO_8rDJBJevM", "state"=>"d801c506e8867501c5b6e5a8cb03b8856bd4d1bf12649467"}
+  [1m[36mPlayer Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1064ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 08:59:08 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 08:59:08 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 08:59:09 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 08:59:09 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (172.6ms)
+Completed 200 OK in 1110ms (Views: 214.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/players/2/playlists/2/songs/2" for ::1 at 2017-04-27 09:00:32 -0400
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XaK06PPZtHrdKolalZrPWafVJYZEmaRmje0fwmJ33w005f58jOCMRXljfCmFOpbrhUbhhDHE/JodajhJVf2Jyg==", "player_id"=>"2", "playlist_id"=>"2", "id"=>"2"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:00:33 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "2"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "2"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "2"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "2"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "2"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "2"]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  Rendered songs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 27.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2/playlists/2/songs/new" for ::1 at 2017-04-27 09:00:35 -0400
+Processing by SongsController#new as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/_form.html.erb (19.8ms)
+  Rendered songs/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:00:43 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"15tetX5FO1IACg8wK5y4hMJrohDAhrhgpC6VQrazrrq+3BQhAXwDbaRD+kM7POE24PhmErXb4Jw0qbLJgTn4fQ==", "song"=>{"name"=>"Let Me Explain", "artist_name"=>"Bryson Tiller"}, "commit"=>"Create Song", "player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("name", "artist_name", "playlist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Let Me Explain"], ["artist_name", "Bryson Tiller"], ["playlist_id", 2], ["created_at", "2017-04-27 13:00:44.041276"], ["updated_at", "2017-04-27 13:00:44.041276"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/players/2/playlists/2/songs.6
+Completed 302 Found in 113ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/players/2/playlists/2/songs.6" for ::1 at 2017-04-27 09:00:44 -0400
+Processing by SongsController#index as 
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `top_tracks' for nil:NilClass):
+  app/controllers/songs_controller.rb:10:in `index'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.8ms)
+
+
+Started POST "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:01:50 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9axRxOWYrL1IMjUFAAtjazdJISK5EoyJ+w0hW8sFjmSc6xtQmqGUgux7wHYQqzrZFdrlIMxP1HVrigbQ/I/Yow==", "song"=>{"name"=>"Love Yourself", "artist_name"=>"Justin Bieber"}, "commit"=>"Create Song", "player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("name", "artist_name", "playlist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Love Yourself"], ["artist_name", "Justin Bieber"], ["playlist_id", 2], ["created_at", "2017-04-27 13:01:50.862018"], ["updated_at", "2017-04-27 13:01:50.862018"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/players/2/playlists/2/songs.7
+Completed 302 Found in 105ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/players/2/playlists/2/songs.7" for ::1 at 2017-04-27 09:01:50 -0400
+Processing by SongsController#index as 
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `top_tracks' for nil:NilClass):
+  app/controllers/songs_controller.rb:10:in `index'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:02:28 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:02:29 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:02:30 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQAOoDZxxqXPZf7LEGY-u9LYNe6lzVnpNCtGltGoawh3-mGscXuEzGw6Rl7ddAS_Jo8113T5qKjBGI1VayVsZOJHeXpJIkhLBzkypSkzPvdDXOXKpNP9X2JePj1anB8UnQmiJ6ft26upXrQsQIlv9S_aSwK2E7i8pVtVn_xxiZm0eGdWApvcIL234QaCAukxRp121UXVMwmcUHbqKOHRMPfAEQUXTtZ74mWYGtwX11UUdiGEcWYRqoFpyCkFw_QnkJKwg0CFfBqw70VGsusqfCUHYabhY4aL9CET0gAcuzWgo_SSuGTq6syY5rfKV0HTJ7z8uQRrQZIG5pHn4t9yLG6uzBP_j--o4auVqQBtgkISL6bS&state=5f05b010bbc8f59749c67c220b32ca1bb8fed82bb040169b" for ::1 at 2017-04-27 09:02:30 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQAOoDZxxqXPZf7LEGY-u9LYNe6lzVnpNCtGltGoawh3-mGscXuEzGw6Rl7ddAS_Jo8113T5qKjBGI1VayVsZOJHeXpJIkhLBzkypSkzPvdDXOXKpNP9X2JePj1anB8UnQmiJ6ft26upXrQsQIlv9S_aSwK2E7i8pVtVn_xxiZm0eGdWApvcIL234QaCAukxRp121UXVMwmcUHbqKOHRMPfAEQUXTtZ74mWYGtwX11UUdiGEcWYRqoFpyCkFw_QnkJKwg0CFfBqw70VGsusqfCUHYabhY4aL9CET0gAcuzWgo_SSuGTq6syY5rfKV0HTJ7z8uQRrQZIG5pHn4t9yLG6uzBP_j--o4auVqQBtgkISL6bS", "state"=>"5f05b010bbc8f59749c67c220b32ca1bb8fed82bb040169b"}
+  [1m[36mPlayer Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1673ms (Views: 23.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:02:45 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:02:45 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/songs_controller.rb:10:in `index'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.6ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:02:45 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:02:45 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/songs_controller.rb:10:in `index'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:04:00 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:04:00 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:04:02 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:04:02 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQCg1d_TpayNZ0035HplUtNA534_TbkLqpPz2RFZWYOvXC0RMbL6nxCjUD7UpEL9L3Lk8T2xEX3nmekJiMejD8zvkEdqcx-2MFx0s9uQsORTkPMjmL--TWKV7gJNDkwGB3XbvdZav5glMLCloBYR0PuKfaiHZE4ndx0FF-t-XxJeNIzzEUG87Z6eKAbsFwINEq_e2s-DUVYcV02-ootIXO8lXEByj5trnCfYPdUELJz6Lsr8wNa8EEBdKkD_rHwv0It-vCM5PQn5-38TmGWmmQdNFAS_3GmntriF6zOxDJbl020HB-18bwxtnSgg-H5CNXWYNAdu6_ulFxJVVnqMALbrlGAc1nnHJ8KlPmP12_qkjvDi&state=51a77d7996b9a036f742b8d7e2d49835ca13c226ed8d8156" for ::1 at 2017-04-27 09:04:02 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQCg1d_TpayNZ0035HplUtNA534_TbkLqpPz2RFZWYOvXC0RMbL6nxCjUD7UpEL9L3Lk8T2xEX3nmekJiMejD8zvkEdqcx-2MFx0s9uQsORTkPMjmL--TWKV7gJNDkwGB3XbvdZav5glMLCloBYR0PuKfaiHZE4ndx0FF-t-XxJeNIzzEUG87Z6eKAbsFwINEq_e2s-DUVYcV02-ootIXO8lXEByj5trnCfYPdUELJz6Lsr8wNa8EEBdKkD_rHwv0It-vCM5PQn5-38TmGWmmQdNFAS_3GmntriF6zOxDJbl020HB-18bwxtnSgg-H5CNXWYNAdu6_ulFxJVVnqMALbrlGAc1nnHJ8KlPmP12_qkjvDi", "state"=>"51a77d7996b9a036f742b8d7e2d49835ca13c226ed8d8156"}
+  [1m[36mPlayer Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1086ms (Views: 22.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:04:04 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (0.8ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:04:05 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 57ms (Views: 50.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:04:06 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:04:06 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `tracks' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `index'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.8ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:04:07 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:04:07 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `tracks' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `index'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:04:51 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 74ms (Views: 73.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:04:51 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:04:52 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:04:52 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQCMYzCH9qRzFXJ2oi2u8QbYD4hUje2ZJWrcRGkEKI46h0pvOQHZm3yDp9Pt7eIQwdxQbR13yxQ36xIa9-viGVa_l7sbLe_djN_PEWQIkPRrEA0WrsZzUIsmdB3eXDhJvkfoxTkFyHATww-U9wuF9el8cK3sZa4vd6coC4sTmbSleEUUTMr463WnXxpPiJIaO03fM9bOn7Q8LZtswyo22cXCMkE11k1v4DN65tjzGH3mtb328Ly4EsT8Jq9mSn1Ul_Grkr7n-GOc1zRY6TrhYyaN3iHLebp8ShDXWjuJMscBzrB9nMt0czRRRmF4TRVW8FFpzvkvkv1plfpMGKOgyeiUBJZzFHiYE6oSLsg2bY8ecNpT&state=9a88526873ac6c26d1c95c89ec7e05a8d4eb21d51426c737" for ::1 at 2017-04-27 09:04:52 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQCMYzCH9qRzFXJ2oi2u8QbYD4hUje2ZJWrcRGkEKI46h0pvOQHZm3yDp9Pt7eIQwdxQbR13yxQ36xIa9-viGVa_l7sbLe_djN_PEWQIkPRrEA0WrsZzUIsmdB3eXDhJvkfoxTkFyHATww-U9wuF9el8cK3sZa4vd6coC4sTmbSleEUUTMr463WnXxpPiJIaO03fM9bOn7Q8LZtswyo22cXCMkE11k1v4DN65tjzGH3mtb328Ly4EsT8Jq9mSn1Ul_Grkr7n-GOc1zRY6TrhYyaN3iHLebp8ShDXWjuJMscBzrB9nMt0czRRRmF4TRVW8FFpzvkvkv1plfpMGKOgyeiUBJZzFHiYE6oSLsg2bY8ecNpT", "state"=>"9a88526873ac6c26d1c95c89ec7e05a8d4eb21d51426c737"}
+  [1m[36mPlayer Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1035ms (Views: 31.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:04:55 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (1.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:04:56 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 70ms (Views: 62.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:04:57 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:04:57 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (326.9ms)
+Completed 200 OK in 418ms (Views: 352.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/players/2/playlists/2/songs/6" for ::1 at 2017-04-27 09:05:09 -0400
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"acJa4e/fC+HeYvbuF1SnGn4ly5/a0ukpGSIXeIWcidoAhRB1kOYz3norA50H9P6oXLYPna+PsdWJpTDzshbfHQ==", "player_id"=>"2", "playlist_id"=>"2", "id"=>"6"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "songs" WHERE "songs"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:05:09 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (190.8ms)
+Completed 200 OK in 1689ms (Views: 215.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/players/2/playlists/2/songs/new" for ::1 at 2017-04-27 09:05:23 -0400
+Processing by SongsController#new as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/_form.html.erb (2.5ms)
+  Rendered songs/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:05:32 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9hZLPjSkoIcqt0RwqTVxy5nOTHoM4WycpeQDqhIPWs+fUQGqS52YuI7+sQO5lSh5u12IeHm8NGA1YyQhJYUMCA==", "song"=>{"name"=>"Work From Home", "artist_name"=>"Bryson Tiller"}, "commit"=>"Create Song", "player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/_form.html.erb (6.9ms)
+  Rendered songs/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 146ms (Views: 62.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:05:43 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b8E0PYkljE/O+9sMEYEKYth4yh4AMyg/ueyplwnkpkcGhn6p9hy0cGqyLn8BIVPQ+usOHHVucMMpa44cPm7wgA==", "song"=>{"name"=>"Work From Home", "artist_name"=>"Fifth Harmony"}, "commit"=>"Create Song", "player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "songs" ("name", "artist_name", "playlist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Work From Home"], ["artist_name", "Fifth Harmony"], ["playlist_id", 2], ["created_at", "2017-04-27 13:05:43.302853"], ["updated_at", "2017-04-27 13:05:43.302853"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/players/2/playlists/2/songs.8
+Completed 302 Found in 127ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/players/2/playlists/2/songs.8" for ::1 at 2017-04-27 09:05:43 -0400
+Processing by SongsController#index as 
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (430.7ms)
+Completed 200 OK in 968ms (Views: 459.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:06:33 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:06:33 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:06:35 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:06:35 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQCyTOXhRMrzx8avDgiVJZSZCT91Ay5WkH2nHKiJPnGoq2e6Gj7wYIAgaMcPIFB6yoNIii4j9Oe9wuFF9n5JAFUOwz8jyvKKHCquRoR7ptPXP3CSsw-_uNPhq-siNxaVnJIOXG8O5fzH4_wkjYl5y_t_K5zcf-IcvBpfIT8pAtOe2bUe_jUMh6pMyKpw0a-dLtaRDwP6gnLLRthMSQHUte-cCO2GwV7pZdJLgt6rnXHSHhom23vNn8IxHv1RLr7L_Y83jxlpD3THNgs6lEuGSXNt5FWNyyThuZyLLToFZ-_8sBxylQFt7i7AkzXKuqUjegOYRK-3_4YopiMOn_o2ND-WkudiJUTukkeZiAW0xr2oUscc&state=b13d6362d31ac6b650adec8d9fc450f5d03c9d10fb50a25b" for ::1 at 2017-04-27 09:06:35 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQCyTOXhRMrzx8avDgiVJZSZCT91Ay5WkH2nHKiJPnGoq2e6Gj7wYIAgaMcPIFB6yoNIii4j9Oe9wuFF9n5JAFUOwz8jyvKKHCquRoR7ptPXP3CSsw-_uNPhq-siNxaVnJIOXG8O5fzH4_wkjYl5y_t_K5zcf-IcvBpfIT8pAtOe2bUe_jUMh6pMyKpw0a-dLtaRDwP6gnLLRthMSQHUte-cCO2GwV7pZdJLgt6rnXHSHhom23vNn8IxHv1RLr7L_Y83jxlpD3THNgs6lEuGSXNt5FWNyyThuZyLLToFZ-_8sBxylQFt7i7AkzXKuqUjegOYRK-3_4YopiMOn_o2ND-WkudiJUTukkeZiAW0xr2oUscc", "state"=>"b13d6362d31ac6b650adec8d9fc450f5d03c9d10fb50a25b"}
+  [1m[35mPlayer Exists (0.2ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 1147ms (Views: 39.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:06:49 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:06:49 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:06:50 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:06:50 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (390.2ms)
+Completed 200 OK in 1233ms (Views: 434.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:07:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:07:55 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:07:57 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:07:57 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQDr5J5mM2k-3VBX9mFiQ6VoZqYa9uWYl2_NQaVZWi-HK6EQZVzQhq_UJVQhQfJKrMkQ038BMsgKwukZZNoDmgW6ZaRlXLBEL91QuzKkHzQXFS555FiugUffynhnHm7IdEJen2YLWmVhk0-fSKrclgnYTEr-JXzQteoCYYIkpUHuyGCXfy3eZV4wHgHr7BLhGmO6cEspyNt-88T0AYLwHcMTtoq8iY8KTqbbT6PEsYPMLej1Qq_Bkctb3W7O1oSE2MKer1mSxowvsAreWoyA4Yubt3swW1ZSV3UjODvpCS0BnXHX3sb30KPMiJSzLQnfnGBEkkFRrfc7uKc5cbuIXcb41mDrcwZuJBYtYSQlX1E6Le3b&state=b00d0ba5a2945c61a6da54910e12a849b81edd93e61c686d" for ::1 at 2017-04-27 09:07:57 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQDr5J5mM2k-3VBX9mFiQ6VoZqYa9uWYl2_NQaVZWi-HK6EQZVzQhq_UJVQhQfJKrMkQ038BMsgKwukZZNoDmgW6ZaRlXLBEL91QuzKkHzQXFS555FiugUffynhnHm7IdEJen2YLWmVhk0-fSKrclgnYTEr-JXzQteoCYYIkpUHuyGCXfy3eZV4wHgHr7BLhGmO6cEspyNt-88T0AYLwHcMTtoq8iY8KTqbbT6PEsYPMLej1Qq_Bkctb3W7O1oSE2MKer1mSxowvsAreWoyA4Yubt3swW1ZSV3UjODvpCS0BnXHX3sb30KPMiJSzLQnfnGBEkkFRrfc7uKc5cbuIXcb41mDrcwZuJBYtYSQlX1E6Le3b", "state"=>"b00d0ba5a2945c61a6da54910e12a849b81edd93e61c686d"}
+  [1m[36mPlayer Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1310ms (Views: 36.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:08:00 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:08:00 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:08:02 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:08:02 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (419.7ms)
+Completed 200 OK in 3891ms (Views: 446.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:08:42 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:08:42 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:08:43 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:08:43 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQD5vbfFuky7FcC8VckLbYiB7y6zBviuPFr0G1G2KhnXbK1OQ7_egfxcIX_Zprv8cIF2xyEyqENYSqUZzr3xWZ7rJVBlznZj85__CgBkyigMHkFXKTmQaHsYNvSkPux65ySytArGj2UOHU3Jo0GcUQi3TJqJSXzN8UnMBDkGR_zpITOg9t7XAVWt5FX4rNOLoMRu8pRvmhUHU_XxN45E24CyQbCtuoxPzEvaCL-BCxYMwS9ULMiuXTxX9aoySQW2lO3kUdpGfMOD85Wb7d8ENwtKiRnaQIND5IFW3ysAKFqpD3YFvXnXGJmN8ojgfZ7bdCLmhTdwX3exTbUUKo-eu_y_owyD1qgwMamzTQT9Hn_yn3Ge&state=05e25a37d2069ab061f469f2d747fe7d1721758cbed6f185" for ::1 at 2017-04-27 09:08:43 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQD5vbfFuky7FcC8VckLbYiB7y6zBviuPFr0G1G2KhnXbK1OQ7_egfxcIX_Zprv8cIF2xyEyqENYSqUZzr3xWZ7rJVBlznZj85__CgBkyigMHkFXKTmQaHsYNvSkPux65ySytArGj2UOHU3Jo0GcUQi3TJqJSXzN8UnMBDkGR_zpITOg9t7XAVWt5FX4rNOLoMRu8pRvmhUHU_XxN45E24CyQbCtuoxPzEvaCL-BCxYMwS9ULMiuXTxX9aoySQW2lO3kUdpGfMOD85Wb7d8ENwtKiRnaQIND5IFW3ysAKFqpD3YFvXnXGJmN8ojgfZ7bdCLmhTdwX3exTbUUKo-eu_y_owyD1qgwMamzTQT9Hn_yn3Ge", "state"=>"05e25a37d2069ab061f469f2d747fe7d1721758cbed6f185"}
+  [1m[35mPlayer Exists (0.2ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1049ms (Views: 31.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:08:46 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:08:46 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 78ms (Views: 71.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:08:48 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:08:48 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (421.7ms)
+Completed 200 OK in 1715ms (Views: 445.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:09:09 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:09:10 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:09:10 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQCKlCK-O6T8go_I9GNoZXm7A9sOwaJl7bVpBm4-K2g-EnhZgTndHGl5K3tgIGJW9adS4cxLKNW0qXVDgW-uYwgcqcVejyvjoizrKNlSoIjlLR4qQ9HLYT5WBoffrmLtAOVQjh_1DbEzzWXEtfZDxNT6eepegO5XqWlnop4pUJogk5y09WGkO3VN3VocPE9RSGDxscrNjfwlNoH8ASuxGENWhlmm26tyIFqiRT7ZpukRoWVo8PbM795JkrGVBWbm4xub4avrus_iMV9cF4gqmdgzr8bRtcsspCRyD-tz5JUTv-pw03p7xLgVc2dAO-DjqT2_u-4exR5uti7GcDu-rinlsmsKf6vwFmgXe2JTZSRE3jaq&state=43e31647e8d2600cb539e0302a975f1c360e104d306c4372" for ::1 at 2017-04-27 09:09:10 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQCKlCK-O6T8go_I9GNoZXm7A9sOwaJl7bVpBm4-K2g-EnhZgTndHGl5K3tgIGJW9adS4cxLKNW0qXVDgW-uYwgcqcVejyvjoizrKNlSoIjlLR4qQ9HLYT5WBoffrmLtAOVQjh_1DbEzzWXEtfZDxNT6eepegO5XqWlnop4pUJogk5y09WGkO3VN3VocPE9RSGDxscrNjfwlNoH8ASuxGENWhlmm26tyIFqiRT7ZpukRoWVo8PbM795JkrGVBWbm4xub4avrus_iMV9cF4gqmdgzr8bRtcsspCRyD-tz5JUTv-pw03p7xLgVc2dAO-DjqT2_u-4exR5uti7GcDu-rinlsmsKf6vwFmgXe2JTZSRE3jaq", "state"=>"43e31647e8d2600cb539e0302a975f1c360e104d306c4372"}
+  [1m[35mPlayer Exists (0.2ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 997ms (Views: 26.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:09:13 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:09:13 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.3ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 51ms (Views: 46.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:09:15 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:09:15 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (423.2ms)
+Completed 200 OK in 1892ms (Views: 448.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:10:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:10:24 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:10:24 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQBbAInmM-dStQb3Zx4yjuTWLJmpBS3uQHkPTeathCkRiuJbNmacidMw7vJgzdNdSdxrOz6_8FymMGM2Prv6RYfOSNTKybdEV7IUedPkwEfaFYuXUv6itxro7PLXEfu608RfUauFXrXImwLVq9sOFxA0sjoEQV-a9uDtX9LpFU0_5fp3ZV6cZPkEYUbofkJegPPC1SjEEG6SPIJ4cfpttHSqILaNrJtIGJAxLxyVI7mX3DxzBTEzZR34Wt7KrxzIViUHqCescOZrQHttEKLMNP0EU2kphXDTYb57Rcshq7xdaDMF5p8Tdkd5wGnIFuGjMVtWp08eqBo9yCgdD9Un7IqJBOY1fgENtvJHdzi-hJQEYm8V&state=96dd4a8a6b5a775e1832d75cb521507e9cb6a6da6c9f82fb" for ::1 at 2017-04-27 09:10:25 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQBbAInmM-dStQb3Zx4yjuTWLJmpBS3uQHkPTeathCkRiuJbNmacidMw7vJgzdNdSdxrOz6_8FymMGM2Prv6RYfOSNTKybdEV7IUedPkwEfaFYuXUv6itxro7PLXEfu608RfUauFXrXImwLVq9sOFxA0sjoEQV-a9uDtX9LpFU0_5fp3ZV6cZPkEYUbofkJegPPC1SjEEG6SPIJ4cfpttHSqILaNrJtIGJAxLxyVI7mX3DxzBTEzZR34Wt7KrxzIViUHqCescOZrQHttEKLMNP0EU2kphXDTYb57Rcshq7xdaDMF5p8Tdkd5wGnIFuGjMVtWp08eqBo9yCgdD9Un7IqJBOY1fgENtvJHdzi-hJQEYm8V", "state"=>"96dd4a8a6b5a775e1832d75cb521507e9cb6a6da6c9f82fb"}
+  [1m[35mPlayer Exists (0.1ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1417ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:10:28 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:10:29 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:10:32 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:10:32 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (387.0ms)
+Completed 200 OK in 1152ms (Views: 417.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:11:00 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 76ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:11:01 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:11:02 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:11:02 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQA2aThN8jhks5_Z5KUZZIM1kMF3OsSt-qemv1olharp8JyhNnWO8nllw33La9Hc6joHlsyljvnc1rn33GPB9d7ffsWFgOVz1H372E7IqEw4H2kIuMb4H11kWGooiq1eEtJgPZpYF3Nb9JMN-NohWNT9L9TdbVTgISGa_Des_IcBLQKvGQ8Q070GN-agT9M1JDIWfKpBQKJgqHp_ajJ_A1L7aM5NQhi9iDpaax0-gVyTDwdFgFHE_Fck7sKCyFWDPKK9rf4P1vTB6NjXbc5HPZJnAnqlgIUR6Ln_fB_KWanvfj20Io33qRgN7GbQlkAZKVMIqRONX2whx1SnWQE2Qc0_yEFEVWdTmKkPbLTOZHcXuPLF&state=c4d536ee07a3e1ff6e302a6e7b9fd683c60f21b030cf6e94" for ::1 at 2017-04-27 09:11:02 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQA2aThN8jhks5_Z5KUZZIM1kMF3OsSt-qemv1olharp8JyhNnWO8nllw33La9Hc6joHlsyljvnc1rn33GPB9d7ffsWFgOVz1H372E7IqEw4H2kIuMb4H11kWGooiq1eEtJgPZpYF3Nb9JMN-NohWNT9L9TdbVTgISGa_Des_IcBLQKvGQ8Q070GN-agT9M1JDIWfKpBQKJgqHp_ajJ_A1L7aM5NQhi9iDpaax0-gVyTDwdFgFHE_Fck7sKCyFWDPKK9rf4P1vTB6NjXbc5HPZJnAnqlgIUR6Ln_fB_KWanvfj20Io33qRgN7GbQlkAZKVMIqRONX2whx1SnWQE2Qc0_yEFEVWdTmKkPbLTOZHcXuPLF", "state"=>"c4d536ee07a3e1ff6e302a6e7b9fd683c60f21b030cf6e94"}
+  [1m[35mPlayer Exists (0.1ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1096ms (Views: 52.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:11:06 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:11:07 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:11:09 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:11:09 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (425.2ms)
+Completed 200 OK in 1752ms (Views: 470.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:12:10 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:12:12 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:12:12 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQApjGUpT6mh6DCXVZRbpNA9b8mrJMCksSu29t3ocaZMe9qV9Qc7gLYV6EYRLvJ-wahqgY-A0XP1ZlYtDUrpkhwunZ0sfHYBTmzdXib35SJAUTD4PhJ6sd1KgiTk3IauebCaXQ18X8ucXrmfSYtn6sNyJ5IeFEnhsHoYTt0bCRbKaBFBGhXlEYmLxQ_5Nf0edT4zDzjYGIk4UYf3bumTXyQH3egsp5wd2XjXCHxZwZUv0ivQkh2lSAeqITtAhk9xpP8L22oUt1C7BGc5lFbfxt2ATYqYyVFMDsiCYFpd2j3g1uUK7K7IdYmWckerjVG18blqwwNSk1DK_CY49AlDh3WUPNLWKhlDA2ou20XJ3KA1T50h&state=0ad5f642e90b247f95a4411eff6d3be927542b13247c6ca3" for ::1 at 2017-04-27 09:12:12 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQApjGUpT6mh6DCXVZRbpNA9b8mrJMCksSu29t3ocaZMe9qV9Qc7gLYV6EYRLvJ-wahqgY-A0XP1ZlYtDUrpkhwunZ0sfHYBTmzdXib35SJAUTD4PhJ6sd1KgiTk3IauebCaXQ18X8ucXrmfSYtn6sNyJ5IeFEnhsHoYTt0bCRbKaBFBGhXlEYmLxQ_5Nf0edT4zDzjYGIk4UYf3bumTXyQH3egsp5wd2XjXCHxZwZUv0ivQkh2lSAeqITtAhk9xpP8L22oUt1C7BGc5lFbfxt2ATYqYyVFMDsiCYFpd2j3g1uUK7K7IdYmWckerjVG18blqwwNSk1DK_CY49AlDh3WUPNLWKhlDA2ou20XJ3KA1T50h", "state"=>"0ad5f642e90b247f95a4411eff6d3be927542b13247c6ca3"}
+  [1m[35mPlayer Exists (0.2ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1291ms (Views: 25.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:12:15 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:12:15 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 55ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:12:17 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:12:17 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.3ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (415.7ms)
+Completed 200 OK in 1147ms (Views: 442.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:13:26 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 30ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:13:28 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:13:28 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQBQPZkO6SxWFPnkTn-pMbZ7sWFMqDxFH5Xd2g-1Fvn21IB9tKq4nGbnvcA9EocRhHtN5pxusPLsJe1z6OkNNeVCOtUuim4jbT1EeY7yf_0vktqucAK1s1TvUp7TmJKWM77IVnALJb0E6sRojx16uGk2S7Y1EYJVCZLG12atUUSPWTpne_ZgRh_3UHl2vvEpIZmDGIRizjHn1iMFtntn92gHAixzl-8sKdBV1z_uXzsYnpQp-O2kPioxU7xot76jZxJxkeeSSzmH_PYXjYU7LnNSLBO_4MZmcC8I0-63RHAS-LSW5Queg91c4xws6garD94uQVr6lZ37bx8Ro9FSMJ5qAaw5uDGBo9BF8Kg-a132BCD0&state=8cefb8cc4f08f5c11d724cb84dbeeb0f88d08e30eee30a85" for ::1 at 2017-04-27 09:13:28 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQBQPZkO6SxWFPnkTn-pMbZ7sWFMqDxFH5Xd2g-1Fvn21IB9tKq4nGbnvcA9EocRhHtN5pxusPLsJe1z6OkNNeVCOtUuim4jbT1EeY7yf_0vktqucAK1s1TvUp7TmJKWM77IVnALJb0E6sRojx16uGk2S7Y1EYJVCZLG12atUUSPWTpne_ZgRh_3UHl2vvEpIZmDGIRizjHn1iMFtntn92gHAixzl-8sKdBV1z_uXzsYnpQp-O2kPioxU7xot76jZxJxkeeSSzmH_PYXjYU7LnNSLBO_4MZmcC8I0-63RHAS-LSW5Queg91c4xws6garD94uQVr6lZ37bx8Ro9FSMJ5qAaw5uDGBo9BF8Kg-a132BCD0", "state"=>"8cefb8cc4f08f5c11d724cb84dbeeb0f88d08e30eee30a85"}
+  [1m[35mPlayer Exists (0.3ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 997ms (Views: 25.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:13:30 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:13:30 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 69ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:13:32 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:13:32 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (404.4ms)
+Completed 200 OK in 1347ms (Views: 437.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:13:41 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/new" for ::1 at 2017-04-27 09:13:43 -0400
+Processing by PlaylistsController#new as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/_form.html.erb (4.2ms)
+  Rendered playlists/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/players/2/playlists" for ::1 at 2017-04-27 09:13:47 -0400
+Processing by PlaylistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"du2FVYsx8nYzbLoAzPpfPSw4Jp4Cco1k+Kr9ULRcGMMfqs/B9AjKSZclT3PcWgaPDqvinHcv1ZhoLdrbg9ZOBA==", "playlist"=>{"name"=>"hi"}, "commit"=>"Create Playlist", "player_id"=>"2"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPlaylist Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "playlists" WHERE "playlists"."name" = 'hi' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  Rendered playlists/_form.html.erb (4.5ms)
+  Rendered playlists/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 61ms (Views: 50.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/players/2/playlists" for ::1 at 2017-04-27 09:13:51 -0400
+Processing by PlaylistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"udkw6u3q3zA6Cl20gyfpq0kMuz6Y+zb1Ok2tzk3x5YDQnnp+ktPnD55DqMeTh7AZa59/PO2mbgmqyopFenuzRw==", "playlist"=>{"name"=>"hinm "}, "commit"=>"Create Playlist", "player_id"=>"2"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPlaylist Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "playlists" WHERE "playlists"."name" = 'hinm ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "playlists" ("name", "player_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "hinm "], ["player_id", 2], ["created_at", "2017-04-27 13:13:51.442934"], ["updated_at", "2017-04-27 13:13:51.442934"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPlaylist Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "playlists" WHERE ("playlists"."name" = 'hinm ' AND "playlists"."id" != 4) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:13:51 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/4" for ::1 at 2017-04-27 09:13:53 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"4"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/4/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/4/songs" for ::1 at 2017-04-27 09:13:53 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  Rendered songs/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    35: <br>
+    36:     <h1>Your Recommendations:</h1>
+    37:         <%@song_artist_name%>
+    38:     <% @artist.name %>
+    39:     <p></p>
+    40:     <div id="multiColumn">
+    41:       
+  app/views/songs/index.html.erb:38:in `_app_views_songs_index_html_erb__1464110501150509891_70113673626380'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.2ms)
+
+
+Started GET "/players/2/playlists/4" for ::1 at 2017-04-27 09:13:53 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"4"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/4/songs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/4/songs" for ::1 at 2017-04-27 09:13:53 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  Rendered songs/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    35: <br>
+    36:     <h1>Your Recommendations:</h1>
+    37:         <%@song_artist_name%>
+    38:     <% @artist.name %>
+    39:     <p></p>
+    40:     <div id="multiColumn">
+    41:       
+  app/views/songs/index.html.erb:38:in `_app_views_songs_index_html_erb__1464110501150509891_70113673315340'
+
+
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/amandalim/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:14:17 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:14:18 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:14:18 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQCV_egbFUss9O46RLaP5yrggWtPE2IUx2boMP5n7YnrAmL2dtxHGOt9Bp-uzyy9xfLfgI7HLVSUfBkrdJJ3HGbQFE-UyhPOZrZwAYlV8pnzuD3_zqOKZGYGV3KTMT0k9-uRmzYTsfXe---G_T9A_k6PKZUfEd8BupUmB0vtWkrMnHYkVGn4MwgLbrCH5uDzeAbL8Fc4rqS5vGsilg52ie5Cqp2678qpT6h8HmL0PV_lCVzlD_hQHwdiHUnUTQKg2HxOrLTLNfQWknr0rZWQurOZoxmKeUGepojem476S4OXpzvK7Lkk9meuGeuNNeCs_-50H9CaxlJiph4ie4ggsFwNh7tLTbP8evvfA6yPyS0VArDr&state=0232cad0c6b741b5356013dc05f8ccf3264480a646b09984" for ::1 at 2017-04-27 09:14:18 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQCV_egbFUss9O46RLaP5yrggWtPE2IUx2boMP5n7YnrAmL2dtxHGOt9Bp-uzyy9xfLfgI7HLVSUfBkrdJJ3HGbQFE-UyhPOZrZwAYlV8pnzuD3_zqOKZGYGV3KTMT0k9-uRmzYTsfXe---G_T9A_k6PKZUfEd8BupUmB0vtWkrMnHYkVGn4MwgLbrCH5uDzeAbL8Fc4rqS5vGsilg52ie5Cqp2678qpT6h8HmL0PV_lCVzlD_hQHwdiHUnUTQKg2HxOrLTLNfQWknr0rZWQurOZoxmKeUGepojem476S4OXpzvK7Lkk9meuGeuNNeCs_-50H9CaxlJiph4ie4ggsFwNh7tLTbP8evvfA6yPyS0VArDr", "state"=>"0232cad0c6b741b5356013dc05f8ccf3264480a646b09984"}
+  [1m[35mPlayer Exists (0.1ms)[0m  SELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 737ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:14:21 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlayer Load (0.7ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:14:21 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.7ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:14:24 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:14:24 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (409.2ms)
+Completed 200 OK in 1565ms (Views: 437.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:14:29 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 83ms (Views: 81.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/4" for ::1 at 2017-04-27 09:14:30 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"4"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/4/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/4/songs" for ::1 at 2017-04-27 09:14:30 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "4"]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  Rendered songs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/4/songs/new" for ::1 at 2017-04-27 09:14:31 -0400
+Processing by SongsController#new as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/_form.html.erb (5.2ms)
+  Rendered songs/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/players/2/playlists/4/songs" for ::1 at 2017-04-27 09:14:40 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lCSC3k0BmZ2ikvAmPB9FkhTMLWL/AK8HJJ7ZB4jT9r39Y8hKMjihogbbBVUsvxwgNl/pYIpd9/u0Gf6Mv1mgeg==", "song"=>{"name"=>"Work", "artist_name"=>"Rihanna"}, "commit"=>"Create Song", "player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("name", "artist_name", "playlist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Work"], ["artist_name", "Rihanna"], ["playlist_id", 4], ["created_at", "2017-04-27 13:14:40.240388"], ["updated_at", "2017-04-27 13:14:40.240388"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/players/2/playlists/4/songs.9
+Completed 302 Found in 104ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/players/2/playlists/4/songs.9" for ::1 at 2017-04-27 09:14:40 -0400
+Processing by SongsController#index as 
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 4]]
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (198.9ms)
+Completed 200 OK in 963ms (Views: 231.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 09:15:47 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:15:49 -0400
+
+
+Started GET "/auth/spotify" for ::1 at 2017-04-27 09:15:49 -0400
+
+
+Started GET "/auth/spotify/callback?code=AQDVnkRVEfaHRiB6F4tWS3pokAel7qUp7mPNOFZeBIEEZmiPhzg56SS6PNbjdS8nFTXiCj1_9oyjygd_O3m9VDBoJu0KfubCaCq0DuBsfdgcJaiidz2fakKBx0GeJAPZ11w_kVvWB4w4c-tvHF9i65CC8tqCpGhlaGcwfKZwIIBQdN6gJFUUb0cnDEJcCaciq6iTJh2j-oKKkKJldeGkLekWbh4prpVRrx0FM49N5z7L_U4aseu2wh005xTAUBcW8UB9g22pKQ8SYhCoFv1jmVOfFoTGCXxOeuRFKKmkJRmO7mjv1uDECEmHQHhk3uouBsvX8g00dZTSYhvuLc52fDhKAnTqvGR3c5Ai0ajUKlGzSrKB&state=730782e94fc176f5504e77200a96d9ba3331be48a9cd270f" for ::1 at 2017-04-27 09:15:49 -0400
+Processing by WelcomeController#spotify as HTML
+  Parameters: {"code"=>"AQDVnkRVEfaHRiB6F4tWS3pokAel7qUp7mPNOFZeBIEEZmiPhzg56SS6PNbjdS8nFTXiCj1_9oyjygd_O3m9VDBoJu0KfubCaCq0DuBsfdgcJaiidz2fakKBx0GeJAPZ11w_kVvWB4w4c-tvHF9i65CC8tqCpGhlaGcwfKZwIIBQdN6gJFUUb0cnDEJcCaciq6iTJh2j-oKKkKJldeGkLekWbh4prpVRrx0FM49N5z7L_U4aseu2wh005xTAUBcW8UB9g22pKQ8SYhCoFv1jmVOfFoTGCXxOeuRFKKmkJRmO7mjv1uDECEmHQHhk3uouBsvX8g00dZTSYhvuLc52fDhKAnTqvGR3c5Ai0ajUKlGzSrKB", "state"=>"730782e94fc176f5504e77200a96d9ba3331be48a9cd270f"}
+  [1m[36mPlayer Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "players" WHERE "players"."email" = ? LIMIT 1[0m  [["email", "alainalim@yahoo.com"]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."email" = ? LIMIT 1  [["email", "alainalim@yahoo.com"]]
+  Rendered welcome/spotify.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1710ms (Views: 21.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/players/2" for ::1 at 2017-04-27 09:15:52 -0400
+Processing by PlayersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:15:52 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 43ms (Views: 38.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/players/2/playlists/4" for ::1 at 2017-04-27 09:15:54 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"4"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/4/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/4/songs" for ::1 at 2017-04-27 09:15:54 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 4]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (212.0ms)
+Completed 200 OK in 1293ms (Views: 232.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/players/2/playlists/2" for ::1 at 2017-04-27 09:16:02 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/2/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/2/songs" for ::1 at 2017-04-27 09:16:02 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"2"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 2]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (499.3ms)
+Completed 200 OK in 1530ms (Views: 538.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/players/2/playlists/new" for ::1 at 2017-04-27 09:16:12 -0400
+Processing by PlaylistsController#new as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/_form.html.erb (1.4ms)
+  Rendered playlists/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:16:15 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1mSELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?[0m  [["player_id", 2]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/4" for ::1 at 2017-04-27 09:16:17 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"4"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/4/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/4/songs" for ::1 at 2017-04-27 09:16:17 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"4"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 4]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (189.7ms)
+Completed 200 OK in 1828ms (Views: 224.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:16:22 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/new" for ::1 at 2017-04-27 09:16:23 -0400
+Processing by PlaylistsController#new as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/_form.html.erb (0.9ms)
+  Rendered playlists/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/players/2/playlists" for ::1 at 2017-04-27 09:16:27 -0400
+Processing by PlaylistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZyQq/rRA3cuZJ/1UTfaAEjzmorkTAIT/PDUOHiHTg7MOY2Bqy3nl9D1uCCddVtmgHnVmu2Zd3AOssimVFlnVdA==", "playlist"=>{"name"=>"uuu"}, "commit"=>"Create Playlist", "player_id"=>"2"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPlaylist Exists (0.1ms)[0m  SELECT  1 AS one FROM "playlists" WHERE "playlists"."name" = 'uuu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "playlists" ("name", "player_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "uuu"], ["player_id", 2], ["created_at", "2017-04-27 13:16:27.482329"], ["updated_at", "2017-04-27 13:16:27.482329"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPlaylist Exists (0.1ms)[0m  SELECT  1 AS one FROM "playlists" WHERE ("playlists"."name" = 'uuu' AND "playlists"."id" != 5) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/players/2/playlists
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/players/2/playlists" for ::1 at 2017-04-27 09:16:27 -0400
+Processing by PlaylistsController#index as HTML
+  Parameters: {"player_id"=>"2"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT "playlists".* FROM "playlists" WHERE "playlists"."player_id" = ?  [["player_id", 2]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered playlists/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/players/2/playlists/5" for ::1 at 2017-04-27 09:16:29 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"player_id"=>"2", "id"=>"5"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/players/2/playlists/5/songs
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/5/songs" for ::1 at 2017-04-27 09:16:29 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"5"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "5"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "5"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "5"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "5"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", "5"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", "5"]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  Rendered songs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/players/2/playlists/5/songs/new" for ::1 at 2017-04-27 09:16:30 -0400
+Processing by SongsController#new as HTML
+  Parameters: {"player_id"=>"2", "playlist_id"=>"5"}
+  [1m[35mPlaylist Load (0.2ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/_form.html.erb (5.3ms)
+  Rendered songs/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/players/2/playlists/5/songs" for ::1 at 2017-04-27 09:16:37 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AKD/v+VrYb9rkqNjyVAXUEFpRpMBFJTz5bQfpOcRtqFp57UrmlJZgM/bVhDZ8E7iY/qCkXRJzA91Mzgv0JvgZg==", "song"=>{"name"=>"Flame", "artist_name"=>"Tinashe"}, "commit"=>"Create Song", "player_id"=>"2", "playlist_id"=>"5"}
+  [1m[35mPlaylist Load (0.1ms)[0m  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("name", "artist_name", "playlist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Flame"], ["artist_name", "Tinashe"], ["playlist_id", 5], ["created_at", "2017-04-27 13:16:38.034493"], ["updated_at", "2017-04-27 13:16:38.034493"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/players/2/playlists/5/songs.10
+Completed 302 Found in 85ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/players/2/playlists/5/songs.10" for ::1 at 2017-04-27 09:16:38 -0400
+Processing by SongsController#index as 
+  Parameters: {"player_id"=>"2", "playlist_id"=>"5"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs" WHERE "songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = ?  [["playlist_id", 5]]
+  [1m[36mPlaylist Load (0.2ms)[0m  [1mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (153.5ms)
+Completed 200 OK in 1292ms (Views: 186.8ms | ActiveRecord: 0.6ms)
