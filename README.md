@@ -1,9 +1,3 @@
----
-
-title: "Final Project: Spotify Lite
-
----
-
 # Final Project: Spotify Lite
 
 
