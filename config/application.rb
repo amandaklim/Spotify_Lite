@@ -15,7 +15,7 @@ Bundler.require(:default, Rails.env)
 
 module SpotifyJukebox
   class Application < Rails::Application
-    RSpotify::authenticate("2920a92ec30342ef9e2f04ebaeb98d28", "5d8597c48e2247c99a156d9635afae6e")
+    RSpotify::authenticate("<your_client_id>", "<your_client_secret>")
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
