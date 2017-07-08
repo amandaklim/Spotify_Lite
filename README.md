@@ -34,4 +34,5 @@ end
 5. Navigate to `http://localhost:3000` on your browser. 
 
 ### User Manual
-1.
+1. Main page that appears when you first navigate to http://localhost:3000
+<img width="1280" alt="s1" src="https://user-images.githubusercontent.com/22601709/27989536-b7f27df0-6408-11e7-9c5a-eef402ead523.png">
