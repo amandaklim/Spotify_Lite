@@ -3,8 +3,6 @@
 ### Description
 Spotify Lite is an app that allows users to log-in to their respective Spotify accounts, view their current top tracks and current top recommendations, create playlists, add songs to playlists, and view song recommendations to a playlist. A user can listen to songs, delete playlists, and delete songs from a playlist. 
 
-The created playlists reside and are saved on the server, thus are only available when logged-in to the app. The playlists will not be available on one's actual Spotify application. 
-
 ### Information
 This app uses https://github.com/guilhermesad/rspotify, a wrapper for the Spotify API for Ruby.
 
