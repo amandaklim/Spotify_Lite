@@ -43,9 +43,10 @@ end
 3. If you press Log In to Spotify, you will be presented with the following page.
 <img width="1280" alt="correct" src="https://user-images.githubusercontent.com/22601709/27989619-b6c32d1a-640a-11e7-8144-84ddea68510e.png">
 
-4. After you log in or create your account, you will be redirected to the following page. The home page will show you 21 of your current top tracks or 21 song suggestions if you are a new user. 
+4. After you log in or create your account, you will be redirected to the following page. The home page will show you your current top tracks or song suggestions if you are a new user. Scrolling down, you will see recommendations based on your top tracks. 
 <img width="1280" alt="s3" src="https://user-images.githubusercontent.com/22601709/27989538-b804ddec-6408-11e7-8a1b-f1c71708d3aa.png">
 <img width="1280" alt="s4" src="https://user-images.githubusercontent.com/22601709/27989539-b8083f50-6408-11e7-82e5-9ddcf2c6faa9.png">
+<img width="1280" alt="st" src="https://user-images.githubusercontent.com/22601709/27989845-19fac284-6411-11e7-9d1e-e1df47ec964f.png">
 
 5. On my page "My Playlists", you will be able to create, edit, view, and delete playlists.
 <img width="1280" alt="new" src="https://user-images.githubusercontent.com/22601709/27989620-b96cb900-640a-11e7-98a4-8f4e0700f1e5.png">
@@ -65,7 +66,7 @@ end
 10. When you click "New Song" you can type in a song name with an artist name to add the song to the playlist.
 <img width="1280" alt="s8" src="https://user-images.githubusercontent.com/22601709/27989543-b812b91c-6408-11e7-8a4e-ca6913d5e860.png">
 
-11. After clicking "Create Song" you will be redirected back to the playlist show page. Underneath the playlist, will be a list of 21 song recommendations based on your most recently added track to the playlist.
+11. After clicking "Create Song" you will be redirected back to the playlist show page. Underneath the playlist, will be a list of song recommendations based on your most recently added track to the playlist.
 <img width="1280" alt="s9" src="https://user-images.githubusercontent.com/22601709/27989545-b8194624-6408-11e7-97bb-909a8e1fbc58.png">
 <img width="1280" alt="s10" src="https://user-images.githubusercontent.com/22601709/27989546-b81b93ac-6408-11e7-9ef3-e6882186dd2a.png">
 
