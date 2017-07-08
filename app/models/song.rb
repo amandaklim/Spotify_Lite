@@ -4,22 +4,21 @@ class Song < ActiveRecord::Base
   validates :artist_name, presence: true
 
   def in_spotify?
-    data = JSON.parse(open("https://api.spotify.com/v1/search?q=#{song_search}&type=track").read)
-    tracks_data = data['tracks']
-    !tracks_data['items'].empty?
+    tracks_data = RSpotify::Track.search(song_search)
+    !tracks_data.empty?
   end
 
   def song_search
     new_song_name = name.gsub(/\s+/, '+')
     new_artist_name = artist_name.gsub(/\s+/, '+')
-    new_song_name + '+' + new_artist_name
+    new_song_name + ' ' + new_artist_name
   end
 
   def spotify_uri
-    data = JSON.parse(open("https://api.spotify.com/v1/search?q=#{song_search}&type=track").read)
+    tracks_data = RSpotify::Track.search(song_search)
     return nil unless in_spotify?
-    return data['tracks']['items'][0]['uri'] unless data['tracks']['items'][0]['uri'].empty?
-    return nil if data['tracks']['items'][0]['uri'].empty?
+    return tracks_data[0].uri unless tracks_data[0].uri.empty?
+    return nil if tracks_data[0].uri.empty?
   end
 
   def add_playlist(song_params)
