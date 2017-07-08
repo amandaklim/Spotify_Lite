@@ -1,6 +1,7 @@
 # Spotify Lite
 
 ### Description
+
 Spotify Lite is an app that allows users to log-in to their respective Spotify accounts, view their current top tracks and current top recommendations, create playlists, add songs to playlists, and view song recommendations to a playlist. A user can listen to songs, delete playlists, and delete songs from a playlist. 
 
 ### Information
@@ -32,3 +33,5 @@ end
 4. Next, execute `$ rails s` to start the server.
 5. Navigate to `http://localhost:3000` on your browser. 
 
+### User Manual
+1.
